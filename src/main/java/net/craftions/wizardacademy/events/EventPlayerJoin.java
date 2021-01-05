@@ -20,6 +20,7 @@ public class EventPlayerJoin implements Listener {
                 // start tutorial
             }else {
                 e.getPlayer().sendMessage("Willkommen zurück!");
+                e.getPlayer().sendTitle("Hallo!","Tschüs!!!");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -10,7 +10,7 @@ public class MySQL {
         System.out.println("Trying to connect to MySQL Database...");
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String connectionCommand = "jdbc:mysql://";
+            String connectionCommand = Config.Mysql.generateConnectCommand();
             con = DriverManager.getConnection(connectionCommand);
         }catch (Exception ex){
             System.err.println("Error connecting to MySQL Database!");

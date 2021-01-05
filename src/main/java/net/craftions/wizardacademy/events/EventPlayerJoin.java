@@ -2,10 +2,13 @@ package net.craftions.wizardacademy.events;
 
 import de.mctzock.api.mysql.MySQL;
 import net.craftions.wizardacademy.tutorial.Tutorial;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -21,9 +24,9 @@ public class EventPlayerJoin implements Listener {
                 // start tutorial
                 System.out.println("Player " + e.getPlayer().getName() + " joined the first time!");
                 Tutorial.TutorialText(e.getPlayer());
+                MySQL.executeUpdate("INSERT INTO users_joined (name, uuid) values ('" + e.getPlayer().getName() + "', '" + e.getPlayer().getUniqueId().toString() + "');");
             }else {
                 e.getPlayer().sendMessage("Willkommen zurück!");
-                System.out.println("Player " + e.getPlayer().getName() + "joined the second+ time!");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

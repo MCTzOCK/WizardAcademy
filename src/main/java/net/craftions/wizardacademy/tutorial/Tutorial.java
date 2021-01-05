@@ -12,7 +12,7 @@ public class Tutorial {
 
         p.sendMessage("§7§l Hallo " + p.getName() + ".");
         p.sendMessage("Hallo! Hier neben dir...");
-
+        p.sendMessage("Ich bin übrigens Otto");
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(WizardAcademy.plugin, new Runnable() {
             @Override
@@ -20,7 +20,7 @@ public class Tutorial {
 
                 p.sendMessage("§7§l Ich habe gehört, dass du neu auf der WizardAcademy bist.");
                 p.sendMessage("§7§l Was hältst du von einer Rundtour am Anfang.");
-                p.sendMessage("Ich bin übrigens Otto");
+
 
                 TextComponent jaGerne = new TextComponent("§a Ja, gerne");
                 ClickEvent clickEventJa = new ClickEvent(ClickEvent.Action.RUN_COMMAND,"/rundtour ja");

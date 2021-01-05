@@ -26,7 +26,7 @@ public class EventPlayerJoin implements Listener {
                 Tutorial.TutorialText(e.getPlayer());
                 MySQL.executeUpdate("INSERT INTO users_joined (name, uuid) values ('" + e.getPlayer().getName() + "', '" + e.getPlayer().getUniqueId().toString() + "');");
             }else {
-                e.getPlayer().sendMessage("Willkommen zurück!");
+                e.getPlayer().sendTitle("§4 Willkommen zurück!","");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

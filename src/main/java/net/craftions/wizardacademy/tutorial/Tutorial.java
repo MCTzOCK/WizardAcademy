@@ -10,16 +10,16 @@ public class Tutorial {
 
     public static void TutorialText(Player p){
 
-        p.sendMessage("§7§l Hallo " + p.getName() + ".");
-        p.sendMessage("Hallo! Hier neben dir...");
-        p.sendMessage("Ich bin übrigens Otto");
+        p.sendMessage("§1§l Hallo " + p.getName() + ".");
+        p.sendMessage("§1§l Hallo! Hier neben dir...");
+        p.sendMessage("§1§l Ich bin übrigens Otto");
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(WizardAcademy.plugin, new Runnable() {
             @Override
             public void run() {
 
-                p.sendMessage("§7§l Ich habe gehört, dass du neu auf der WizardAcademy bist.");
-                p.sendMessage("§7§l Was hältst du von einer Rundtour am Anfang.");
+                p.sendMessage("§1§l Ich habe gehört, dass du neu auf der WizardAcademy bist.");
+                p.sendMessage("§1§l Was hältst du von einer Rundtour am Anfang.");
 
 
                 TextComponent jaGerne = new TextComponent("§a Ja, gerne");

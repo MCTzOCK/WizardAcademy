@@ -11,6 +11,7 @@ public class MySQL {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             String connectionCommand = Config.Mysql.generateConnectCommand();
+            System.out.println("Using connection Command: " + connectionCommand);
             con = DriverManager.getConnection(connectionCommand);
         }catch (Exception ex){
             System.err.println("Error connecting to MySQL Database!");

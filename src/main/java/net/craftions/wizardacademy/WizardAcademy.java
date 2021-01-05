@@ -1,6 +1,9 @@
 package net.craftions.wizardacademy;
 
 import de.mctzock.api.mysql.Config;
+import de.mctzock.api.mysql.MySQL;
+import net.craftions.wizardacademy.events.EventPlayerJoin;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -30,11 +33,14 @@ public final class WizardAcademy extends JavaPlugin {
             }
         }
         Config.prepare(new Config.Mysql());
+        MySQL.connect();
+        Bukkit.getPluginManager().registerEvents(new EventPlayerJoin(), this);
         System.out.println("Welcome to WizardAcademy v" + this.getDescription().getVersion() + " by " + this.getDescription().getAuthors());
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        MySQL.disconnect();
     }
 }

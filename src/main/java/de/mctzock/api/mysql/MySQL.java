@@ -37,4 +37,12 @@ public class MySQL {
         }
         return null;
     }
+
+    public static void disconnect() {
+        try {
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

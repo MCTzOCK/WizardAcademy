@@ -2,3 +2,6 @@ name: WizardAcademy
 version: ${project.version}
 main: net.craftions.wizardacademy.WizardAcademy
 api-version: 1.16
+authors:
+  - MCTzOCK
+  - Sausefix

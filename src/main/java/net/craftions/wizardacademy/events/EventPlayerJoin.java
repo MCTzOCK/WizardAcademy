@@ -23,6 +23,7 @@ public class EventPlayerJoin implements Listener {
                 Tutorial.TutorialText(e.getPlayer());
             }else {
                 e.getPlayer().sendMessage("Willkommen zurück!");
+                System.out.println("Player " + e.getPlayer().getName() + "joined the second+ time!");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

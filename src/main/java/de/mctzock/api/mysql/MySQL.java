@@ -1,5 +1,10 @@
 package de.mctzock.api.mysql;
 
+import net.craftions.wizardacademy.tutorial.Tutorial;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
 import java.sql.*;
 
 public class MySQL {
@@ -10,7 +15,9 @@ public class MySQL {
         System.out.println("Trying to connect to MySQL Database...");
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String connectionCommand = Config.Mysql.generateConnectCommand();
+            File mysql_config = new File("conf/mysql.yml");
+            FileConfiguration config = YamlConfiguration.loadConfiguration(mysql_config);
+            String connectionCommand = "jdbc:mysql://" + config.getString("host") + "/" + config.getString("database") + "?user=" + config.getString("user") + "&password=" + config.getString("password") + "&autoreconnect=true";
             System.out.println("Using connection Command: " + connectionCommand);
             con = DriverManager.getConnection(connectionCommand);
         }catch (Exception ex){

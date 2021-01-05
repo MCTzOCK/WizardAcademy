@@ -1,6 +1,7 @@
 package net.craftions.wizardacademy.events;
 
 import de.mctzock.api.mysql.MySQL;
+import net.craftions.wizardacademy.tutorial.Tutorial;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -18,6 +19,8 @@ public class EventPlayerJoin implements Listener {
             if(!rs.next()){
                 // player has not joined before
                 // start tutorial
+                System.out.println("Player " + e.getPlayer().getName() + " joined the first time!");
+                Tutorial.TutorialText(e.getPlayer());
             }else {
                 e.getPlayer().sendMessage("Willkommen zurück!");
             }

@@ -17,7 +17,7 @@ public class MySQL {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             File mysql_config = new File("conf/mysql.yml");
             FileConfiguration config = YamlConfiguration.loadConfiguration(mysql_config);
-            String connectionCommand = "jdbc:mysql://" + config.getString("host") + "/" + config.getString("database") + "?user=" + config.getString("user") + "&password=" + config.getString("password") + "&autoreconnect=true";
+            String connectionCommand = "jdbc:mysql://" + config.getString("host") + "/" + config.getString("database") + "?user=" + config.getString("user") + "&password=" + config.getString("password") + "&autoreconnect=true&useSSL=false";
             System.out.println("Using connection Command: " + connectionCommand);
             con = DriverManager.getConnection(connectionCommand);
         }catch (Exception ex){

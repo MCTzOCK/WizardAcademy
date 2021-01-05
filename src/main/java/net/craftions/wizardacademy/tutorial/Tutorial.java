@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class Tutorial {
 
-    public void TutorialText(Player p){
+    public static void TutorialText(Player p){
 
         p.sendMessage("§7§l Hallo " + p.getName() + ".");
         p.sendMessage("Hallo! Hier neben dir...");

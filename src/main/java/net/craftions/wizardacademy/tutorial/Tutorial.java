@@ -1,6 +1,7 @@
 package net.craftions.wizardacademy.tutorial;
 
 import net.craftions.wizardacademy.WizardAcademy;
+import net.craftions.wizardacademy.utils.Locations;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -18,6 +19,7 @@ public class Tutorial {
             @Override
             public void run() {
 
+                p.teleport(Locations.spawn);
                 p.sendMessage("§1§l Ich habe gehört, dass du neu auf der WizardAcademy bist.");
                 p.sendMessage("§1§l Was hältst du von einer Rundtour am Anfang.");
 
@@ -31,6 +33,7 @@ public class Tutorial {
                 ClickEvent clickEventNein = new ClickEvent(ClickEvent.Action.RUN_COMMAND,"/rundtour nein");
                 neinDanke.setClickEvent(clickEventNein);
                 p.spigot().sendMessage(neinDanke);
+
 
             }
         },2 * 20);

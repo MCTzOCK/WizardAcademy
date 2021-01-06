@@ -15,7 +15,6 @@ public class CommandRundtour implements CommandExecutor {
         if (args.length == 1) {
             if (args[0].equals("ja")){
 
-                player.teleport(Locations.tutorial_start);
 
             }else if (args[0].equals("nein")){
                 sender.sendMessage("Ok. Ein Tipp noch:");

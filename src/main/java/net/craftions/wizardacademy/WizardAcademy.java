@@ -1,6 +1,7 @@
 package net.craftions.wizardacademy;
 
 import de.mctzock.api.mysql.MySQL;
+import net.craftions.wizardacademy.commands.CommandRundtour;
 import net.craftions.wizardacademy.events.EventPlayerJoin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,6 +34,7 @@ public final class WizardAcademy extends JavaPlugin {
         }
         MySQL.connect();
         Bukkit.getPluginManager().registerEvents(new EventPlayerJoin(), this);
+        getCommand("rundtour").setExecutor(new CommandRundtour());
         System.out.println("Welcome to WizardAcademy v" + this.getDescription().getVersion() + " by " + this.getDescription().getAuthors());
     }
 

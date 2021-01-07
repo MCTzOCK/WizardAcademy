@@ -1,6 +1,7 @@
 package net.craftions.wizardacademy.events;
 
 import de.mctzock.api.mysql.MySQL;
+import de.mctzock.api.npc.GameNPCs;
 import net.craftions.wizardacademy.tutorial.Tutorial;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -27,6 +28,7 @@ public class EventPlayerJoin implements Listener {
                 MySQL.executeUpdate("INSERT INTO users_joined (name, uuid) values ('" + e.getPlayer().getName() + "', '" + e.getPlayer().getUniqueId().toString() + "');");
             }else {
                 e.getPlayer().sendTitle("§4 Willkommen zurück!","");
+                GameNPCs.generateTestNPC(e.getPlayer());
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

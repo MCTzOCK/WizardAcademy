@@ -5,3 +5,9 @@ api-version: 1.16
 authors:
   - MCTzOCK
   - Sausefix
+commands:
+  npc:
+    permission: system.command.npc
+  rundtour:
+    usage: /rundtour ...
+load: POSTWORLD
